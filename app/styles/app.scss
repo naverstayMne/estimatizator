@@ -1,0 +1,219 @@
+$font: 'Open Sans', sans-serif;
+$white: #fff;
+$dark: #202020;
+$red: #dd0404;
+$green: #04961f;
+
+@mixin box($value){
+  -webkit-box-sizing: $value;
+     -moz-box-sizing: $value;
+      -ms-box-sizing: $value;
+          box-sizing: $value}
+
+@mixin shadow($value){
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+      -ms-box-shadow: $value;
+          box-shadow: $value}
+
+
+@mixin transform($value){
+  -webkit-transform: $value;
+     -moz-transform: $value;
+      -ms-transform: $value;
+          transform: $value;
+}
+
+.h-center{
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%))}
+
+.v-center{
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%))}
+
+.abs-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%))}
+
+/* Icons */
+@font-face {
+  font-family: 'Estimatizator';
+  src:
+    url('fonts/Estimatizator.ttf?hgvttt') format('truetype'),
+    url('fonts/Estimatizator.woff?hgvttt') format('woff'),
+    url('fonts/Estimatizator.svg?hgvttt#Estimatizator') format('svg');
+  font-weight: normal;
+  font-style: normal}
+
+[class^="e-"], [class*=" e-"]{
+  font-family: 'Estimatizator'!important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale}
+
+.e-pencil:before{content: "\e905"}
+.e-pencil2:before{content: "\e906"}
+.e-price-tag:before{content: "\e935"}
+.e-clock:before{content: "\e94e"}
+.e-clock2:before{content: "\e94f"}
+.e-download:before{content: "\e960"}
+.e-upload:before{content: "\e961"}
+.e-floppy-disk:before{content: "\e962"}
+.e-bubble:before{content: "\e96b"}
+.e-bubble2:before{content: "\e96e"}
+.e-smile2:before{content: "\e9e2"}
+.e-sad2:before{content: "\e9e6"}
+.e-neutral2:before{content: "\e9f8"}
+.e-wondering2:before{content: "\e9fc"}
+.e-plus:before{content: "\ea0a"}
+.e-cross:before{content: "\ea0f"}
+.e-checkmark:before{content: "\ea10"}
+.e-file-pdf:before{content: "\eadf"}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, summary,
+time, mark, audio, video, button, a{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent}
+
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section{display: block}
+ul{list-style: none}
+blockquote, q{quotes: none}
+table {
+  border-collapse: collapse;
+  border-spacing: 0}
+
+a{
+  color: inherit;
+  &,&:focus,&:hover,&:active{text-decoration: none}}
+
+strong{font-weight: 700}
+.text-left{text-align: left}
+.text-right{text-align: right}
+.text-center{text-align: center}
+
+body{
+  position: relative;
+  color: $dark;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: $font;
+  font-weight: 300;
+  background: $white}
+
+.row{  
+  display: table;
+  width: 100%;  
+  @include box(border-box);
+  .items-title &{padding-left: 8px}
+  .items-body &{
+    background: darken($white, 3%);
+    border-left: 8px solid darken($white, 30%);
+    border-bottom: 1px solid darken($white, 30%);    
+    &.clear{border-left-color: $green}
+    &.not-clear{border-left-color: $red}
+    &.mostly-clear{border-left-color: lighten($green, 50%)}
+    &.not-very-clear{border-left-color: lighten($red, 50%)}}
+  &-inner{display: table-row}
+  &-wrap{position: relative}
+}
+
+.col{
+  padding: 10px;
+  display: table-cell;
+  vertical-align: middle}
+
+.icon{
+  color: inherit;
+  font-size: 20px;
+  .tool &{@extend .abs-center}
+  .section-title &{
+    left: 0;   
+    @extend .v-center}
+  .btn-edit{
+    @extend .abs-center;
+  }
+}
+
+.container{
+  width: 1200px;
+  margin: 0 auto}
+
+.header{background: $dark}
+
+.task-title{
+  color: darken($white, 10%);
+  font-size: 24px;
+  font-weight: 400;
+  padding: 15px 0}
+
+.section{
+  margin: 10px 0 30px;
+  background: darken($white, 10%);
+  @include shadow(0 2px 5px 0 transparentize($dark, 0.7));
+  padding: 20px 0}
+
+.section-title{
+  color: $dark;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 15px 0 15px 30px;
+  letter-spacing: -1px;
+  position: relative;
+  text-transform: uppercase}
+
+.items-list{
+  margin: 15px 0;
+  background: $white;
+  color: $dark; 
+  h3{font-weight: 300}}
+
+.items-body{
+  ul li {padding-left: 15px;}
+}
+.items-title{border-bottom: 10px solid darken($white, 7%)}
+
+.min{width: 150px}
+.tool{
+  color: darken($white, 10%);
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  &.active{
+    color: $dark;
+    cursor: pointer;
+    &:hover{opacity: 0.7}
+  }}
+
+.btn{
+  cursor: pointer;
+  &-edit{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    @extend .v-center;
+    right: -40px;
+  }
+  &:hover{opacity: 0.7}
+}
