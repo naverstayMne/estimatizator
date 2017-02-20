@@ -191,6 +191,9 @@ body{
   h3{font-weight: 300}}
 
 .items-body{
+  >li{
+    margin: 0 0 15px;
+    border-top: 1px solid darken($white, 30%)}
   ul li {padding-left: 15px}}
 
 .items-title{border-bottom: 10px solid darken($white, 7%)}
@@ -244,6 +247,7 @@ body{
 
 .input-wrap{
   input, textarea, select{
+    display: block;
     font-size: 14px;
     font-family: $font;
     width: 100%;
@@ -255,14 +259,13 @@ body{
     background: $white;
     &:focus{border-color: darken($white, 30%)}}
   textarea{
-    resize: none;
-    height: 100px;
+    resize: vertical;
     overflow: auto}}
 
 .edit-tools{
   display: none;
   padding: 15px 18px;
-  margin: 0 0 30px;
+  margin: 0 0 15px;
   background: darken($white, 3%);
   border-bottom: 3px solid darken($white, 30%);
   .btn .icon{
@@ -289,4 +292,5 @@ body{
     position: absolute;
     opacity: 0;
     z-index: -1}
+  .col{vertical-align: top}
   .back,.edit-tools{display: block}}
