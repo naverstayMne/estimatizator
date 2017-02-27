@@ -28,6 +28,21 @@ $green: #04961f;
       -ms-transform: $value;
           transform: $value}
 
+@mixin optional-at-root($sel){
+  @at-root #{if(not &, $sel, selector-append(&, $sel))}{@content}}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder'){@content}
+  @include optional-at-root(':-moz-placeholder'){@content}
+  @include optional-at-root('::-moz-placeholder'){@content}
+  @include optional-at-root(':-ms-input-placeholder'){@content}}
+
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .h-center{
   position: absolute;
   left: 50%;
@@ -123,7 +138,7 @@ body{
   line-height: 1.2;
   font-family: $font;
   font-weight: 300;
-  background: $white}
+  background: url(images/bg-main.png) repeat 0 0}
 
 .row{  
   display: table;
@@ -161,10 +176,33 @@ body{
   width: 1200px;
   margin: 0 auto}
 
-.header{background: $dark}
+.header{
+  padding: 30px 0;
+  background: $white;
+  border-bottom: 2px solid lighten($dark, 5%);
+  ul{
+    float: left;
+    li{
+      font-size: 14px;
+      padding: 15px 10px;
+      font-weight: 700;
+      text-transform: uppercase}}}
 
+.home{
+  padding: 120px 0 0;
+  h3{
+    font-size: 60px;
+    margin: 0 0 50px}
+  h4{
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin: 0 0 30px}}
+
+.logo{display: block}
 .task-title{
   color: darken($white, 10%);
+  background: $dark;
   font-size: 24px;
   font-weight: 400;
   padding: 15px 0}
@@ -176,7 +214,8 @@ body{
   padding: 20px 0}
 
 .section-title{
-  color: $dark;
+  color: $white;
+  background: $dark;
   font-size: 20px;
   font-weight: 700;
   padding: 15px 0 15px 30px;
@@ -211,24 +250,27 @@ body{
     &:hover{opacity: 0.7}}}
 
 .btn{
-  padding: 10px 15px;
+  display: inline-block;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 700;  
   @include radius(4px);
-  cursor: pointer;  
-  &:hover{opacity: 0.7}
+  cursor: pointer;
   .icon{
     color: inherit;
     font-size: inherit}
-  .edit-tools &{
-    color: $white;
-    padding-left: 40px}
+  &.iconed{
+    padding-left: 40px;
+    position: relative;
+    &.big{padding-left: 50px}
+    .icon{
+      @extend .v-center;
+      left: 20px}}
   &-add{
+    color: $white;
     background: $dark;
-    }
-  &-delete{
-    background: darken($red, 15%);
-    }
+    &:hover{background: darken($red, 5%)}}
+  &-delete{background: darken($red, 15%)}
   &-edit{
     position: absolute;
     width: 40px;
@@ -239,13 +281,15 @@ body{
     right: -40px;
     @extend .v-center;
     .icon{@extend .abs-center}}
-  .buttons &{
-    position: relative;
-    margin-left: 6px}}
-
+  &.big{
+    font-size: 20px;
+    margin: 0 5px; 
+    text-transform: uppercase}
+  .buttons &{position: relative}}
 .buttons{margin-top: 30px}
 
 .input-wrap{
+  .form-block &{margin: 0 0 15px}
   input, textarea, select{
     display: block;
     font-size: 14px;
@@ -257,7 +301,12 @@ body{
     @include box(border-box);
     border: 1px solid $dark;
     background: $white;
-    &:focus{border-color: darken($white, 30%)}}
+    &:focus{border-color: darken($white, 30%)}
+    @include placeholder{
+      color: $dark;
+      font-family: $font;
+    }
+  }
   textarea{
     resize: vertical;
     overflow: auto}}
@@ -267,10 +316,7 @@ body{
   padding: 15px 18px;
   margin: 0 0 15px;
   background: darken($white, 3%);
-  border-bottom: 3px solid darken($white, 30%);
-  .btn .icon{
-    @extend .v-center;
-    left: 15px}}
+  border-bottom: 3px solid darken($white, 30%)}
 
 .add-wrap{
   margin: 0 0 5px;
@@ -294,3 +340,8 @@ body{
     z-index: -1}
   .col{vertical-align: top}
   .back,.edit-tools{display: block}}
+
+.form-block{
+  width: 30%;
+  margin: 50px auto 15px;
+}

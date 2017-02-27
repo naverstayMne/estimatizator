@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="home text-center">
+		<h3>Wanna create an estimate?</h3>
+		<h4>You must be logged in</h4>
+		{{#if userChoise.state}}
+	    <button {{action "login"}} class="btn big btn-add">Login</button>
+	    <button {{action "register"}} class="btn big btn-add">Register</button>
+	  {{else}}
+	    {{#if userChoise.login}}
+	      {{user-login users=model.users userChoise=userChoise}}
+	    {{/if}}
+	    {{#if userChoise.register}}
+	      {{user-register users=model.users userChoise=userChoise}}
+	    {{/if}}
+	  {{/if}}
+	</div>  
+</div>
