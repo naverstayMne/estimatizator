@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   },
   user_register_status: {
     state: false,
-    message: 'User created!'
+    message: 'Success'
   },
   query_ID: null,
   filepicker: Ember.inject.service(),

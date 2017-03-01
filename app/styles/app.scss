@@ -197,7 +197,7 @@ body{
     font-size: 34px;
     font-weight: 300;
     letter-spacing: -1px;
-    margin: 0 0 30px}}
+    margin: 0}}
 
 .logo{display: block}
 .task-title{
@@ -303,7 +303,7 @@ body{
     background: $white;
     &:focus{border-color: darken($white, 30%)}
     @include placeholder{
-      color: $dark;
+      color: lighten($dark, 50%);
       font-family: $font;
     }
   }
@@ -343,5 +343,11 @@ body{
 
 .form-block{
   width: 30%;
-  margin: 50px auto 15px;
-}
+  margin: 15px auto}
+.alert{
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 15px 0;
+  font-weight: 700;
+  &.alert-danger{color: $red}
+  &.alert-success{color: $green}}

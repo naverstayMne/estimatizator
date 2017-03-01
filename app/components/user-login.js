@@ -7,7 +7,7 @@ export default Ember.Component.extend({
   },
   user_error_login: {
     status: false,
-    message: 'Sorry password or login is incorrect('
+    message: 'Sorry login or password is incorrect :('
   },
   findedUser: null,
   query_ID: null,

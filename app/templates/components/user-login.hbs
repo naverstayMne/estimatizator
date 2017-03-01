@@ -4,15 +4,13 @@
 {{else}}
   <div class="form-block">
     {{#if user_error_login.status}}
-    <div class="alert alert-danger" role="alert">
-      <strong>{{user_error_login.message}}</strong>
-    </div>
+    <div class="alert alert-danger">{{user_error_login.message}}</div>
     {{/if}}
     <div class="input-wrap">
-      {{input type="text" class="form-control" name="user_name" value=user.name placeholder="Enter your name"}}
+      {{input type="text" name="user_name" value=user.name placeholder="Enter your name"}}
     </div>
     <div class="input-wrap">
-      {{input type="password" class="form-control" name="user_password" value=user.password placeholder="Enter your password"}}
+      {{input type="password" name="user_password" value=user.password placeholder="Enter your password"}}
     </div>
     <button {{action "login"}} class="btn big btn-add">Login</button>
     <button {{action "cancel"}} class="btn big btn-add">Cancel</button>
