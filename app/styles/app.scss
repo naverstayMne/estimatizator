@@ -205,23 +205,26 @@ body{
   background: $dark;
   font-size: 24px;
   font-weight: 400;
+  margin-bottom: 60px;
   padding: 15px 0}
 
 .section{
-  margin: 10px 0 30px;
+  margin: 0;
   background: darken($white, 10%);
   @include shadow(0 2px 5px 0 transparentize($dark, 0.7));
-  padding: 20px 0}
+  padding: 0 0 20px}
 
 .section-title{
   color: $white;
   background: $dark;
   font-size: 20px;
-  font-weight: 700;
-  padding: 15px 0 15px 30px;
-  letter-spacing: -1px;
-  position: relative;
-  text-transform: uppercase}
+  font-weight: 700;  
+  letter-spacing: -1px;  
+  text-transform: uppercase;
+  h2{
+    position: relative;
+    @include box(border-box);
+    padding: 15px 0 15px 30px}}
 
 .items-list{
   margin: 15px 0;
@@ -270,7 +273,9 @@ body{
     color: $white;
     background: $dark;
     &:hover{background: darken($red, 5%)}}
-  &-delete{background: darken($red, 15%)}
+  &-delete{
+    color: $white;
+    background: darken($red, 15%)}
   &-edit{
     position: absolute;
     width: 40px;
@@ -285,7 +290,8 @@ body{
     font-size: 20px;
     margin: 0 5px; 
     text-transform: uppercase}
-  .buttons &{position: relative}}
+  .buttons &{position: relative}
+  &.full{width: 100%}}
 .buttons{margin-top: 30px}
 
 .input-wrap{
