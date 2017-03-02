@@ -272,10 +272,11 @@ body{
   &-add{
     color: $white;
     background: $dark;
-    &:hover{background: darken($red, 5%)}}
+    &:hover{background: lighten($dark, 30%)}}
   &-delete{
     color: $white;
-    background: darken($red, 15%)}
+    background: darken($red, 5%);
+    &:hover{background: darken($red, 15%)}}
   &-edit{
     position: absolute;
     width: 40px;
@@ -285,6 +286,7 @@ body{
     font-size: 20px;    
     right: -40px;
     @extend .v-center;
+    &:hover{opacity: 0.5}
     .icon{@extend .abs-center}}
   &.big{
     font-size: 20px;
