@@ -1,0 +1,18 @@
+<div class="form-block">
+	<div class="input-wrap">
+		{{input type="text" placeholder="Task title" value=newEstimate.title}}
+	</div>
+	{{single-section}}
+	<div class="text-right">
+		<button class="btn btn-add iconed"><i class="icon e-plus"></i>Add section</button>
+	</div>	
+	<div class="buttons text-center">
+		<button {{action "createEstimate"}} class="btn big btn-add full">Create</button>
+	</div>
+
+	{{#if newEstimate.title}}
+    <div class="name">
+      <p>Name: {{newEstimate.title}}</p>
+    </div>
+  {{/if}}
+</div>
