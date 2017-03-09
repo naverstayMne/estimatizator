@@ -1,5 +1,10 @@
 <header class="header">
 	<nav class="container clearfix">
-		{{#link-to 'create' class="logo text-center" }}<img src="assets/images/main-logo.png" alt="">{{/link-to}}
+		{{#link-to 'welcome' class="logo text-center" }}<img src="assets/images/main-logo.png" alt="">{{/link-to}}
+		{{#if estimates}}
+      {{#link-to "all-estimates" tagName="li" class="nav-item" }}
+        {{#link-to 'all-estimates' class="nav-link" }}All estimates{{/link-to}}
+      {{/link-to}}
+    {{/if}}
 	</nav>
 </header>

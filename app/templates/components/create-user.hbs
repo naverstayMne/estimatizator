@@ -1,0 +1,27 @@
+<div class="form-block">
+  {{#if user_create_status.state}}
+    <div class="alert alert-success" role="alert">
+      <strong>{{user_create_status.message}}</strong>
+    </div>
+    {{#link-to 'estimate-list' query_ID class="btn big btn-add"}}View my estimates{{/link-to}}
+    <button {{action "cancel"}} class="btn big btn-add">logout</button>
+  {{else}}
+    <div class="input-wrap">
+      {{input type="text" name="user_name" value=newUser.name placeholder="Enter name"}}
+    </div>
+    <div class="input-wrap">
+      {{input type="password" name="user_password" value=newUser.password placeholder="Enter password"}}
+    </div>
+
+    <button {{action "createNewUser"}} class="btn big btn-add">Create</button>
+    <button {{action "cancel"}} class="btn big btn-add">Cancel</button>
+  {{/if}}
+{{!-- 
+
+    {{#if newUser.name}}
+      <div class="name">
+        <p>Name: {{newUser.name}}</p>
+      </div>
+    {{/if}} --}}
+
+</div>

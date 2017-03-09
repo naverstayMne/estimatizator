@@ -1,4 +1,4 @@
-<div class="form-block">
+{{!-- <div class="form-block">
 	<div class="input-wrap">
 		{{input type="text" placeholder="Task title" value=newEstimate.title}}
 	</div>
@@ -15,4 +15,29 @@
       <p>Name: {{newEstimate.title}}</p>
     </div>
   {{/if}}
+</div> --}}
+
+<div class="row">
+  <div class="col-12">
+    <h3>Hi: {{user.name}} <img src="{{user.avatar}}" alt="" class="user-avatar"></h3>
+    <p>You can create new estimate:</p>
+  </div>
+  <div class="form-block"> 
+    <div class="input-wrap">
+      {{input type="text" name="user_name" value=newEstimate.title placeholder="Task title"}}
+    </div>
+    <div class="input-wrap">
+      <label for="">Deadline date</label>
+      {{input type="date" name="user_name" value=deadline.date placeholder="Enter your name"}}
+    </div>
+    <div class="input-wrap">
+      <label for="">time</label>
+      {{input type="time" name="user_name" value=deadline.time placeholder="Enter your name"}}
+    </div>
+    <div class="input-wrap">
+      {{textarea name="user_name" value=newEstimate.comment placeholder="Comment"}}
+    </div>
+
+    <button {{action "createEstimate"}} class="btn big btn-add">Create</button>
+  </div>
 </div>

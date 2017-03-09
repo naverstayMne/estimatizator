@@ -4,10 +4,18 @@
 
 <div class="container">
 
-{{create-estimate}}
+{{create-estimate task_id=model.id estimate=model.estimate}}
 
-{{!-- {{#each model as |singleEstimate|}}
-	{{single-estimate items=singleEstimate}}
-{{/each}} --}}
+
+
+{{#link-to 'task-list' query_ID class="btn btn-success"}}View my task list{{/link-to}}
+
+{{!-- {{#if model.estimates}}
+  {{estimates task=model.task}}
+{{else}}
+  <div class="alert alert-warning" role="alert">
+    <strong>No tasks found :(</strong>
+  </div>
+{{/if}} --}}
 
 </div>
