@@ -1,22 +1,24 @@
 <div class="form-block">
 {{#if findedUser}}
-  {{#link-to 'estimate-list' query_ID class="btn btn-success"}}View my estimates{{/link-to}}
-  <button {{action "logout"}} class="btn btn-add">Logout</button>
-{{else}}
+  <div class="buttons">
+    {{#link-to 'estimate-list' query_ID class="btn big btn-add"}}My estimates{{/link-to}}
+    {{!-- <button {{action "logout"}} class="btn big btn-delete">Logout</button> --}}
+  </div>
 
+{{else}}
   {{#if user_error_login.status}}
     <div class="alert alert-danger" role="alert">
       <strong>{{user_error_login.message}}</strong>
     </div>
   {{/if}}
   <div class="input-wrap">
-    {{input type="text" name="user_name" value=user.name placeholder="Enter your name"}}
+    {{input type="text" value=user.name placeholder="Your Name"}}
   </div>
   <div class="input-wrap">
-    {{input type="password" name="user_password" value=user.password placeholder="Enter your password"}}
+    {{input type="password" value=user.password placeholder="Your Password"}}
   </div>
   <button {{action "login"}} class="btn big btn-add">Login</button>
-  <button {{action "cancel"}} class="btn big btn-add">Cancel</button>
+  <button {{action "cancel"}} class="btn big btn-delete">Cancel</button>
 
 {{/if}}
 </div>

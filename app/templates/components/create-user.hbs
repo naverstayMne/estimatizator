@@ -3,18 +3,21 @@
     <div class="alert alert-success" role="alert">
       <strong>{{user_create_status.message}}</strong>
     </div>
-    {{#link-to 'estimate-list' query_ID class="btn big btn-add"}}View my estimates{{/link-to}}
-    <button {{action "cancel"}} class="btn big btn-add">logout</button>
+    <div class="buttons">
+      {{#link-to 'estimate-list' query_ID class="btn big btn-add"}}My estimates{{/link-to}}
+      {{!-- <button {{action "cancel"}} class="btn big btn-delete">logout</button> --}}
+    </div>
+    
   {{else}}
     <div class="input-wrap">
-      {{input type="text" name="user_name" value=newUser.name placeholder="Enter name"}}
+      {{input type="text" value=newUser.name placeholder="Enter Name"}}
     </div>
     <div class="input-wrap">
-      {{input type="password" name="user_password" value=newUser.password placeholder="Enter password"}}
+      {{input type="password" value=newUser.password placeholder="Enter Password"}}
     </div>
 
     <button {{action "createNewUser"}} class="btn big btn-add">Create</button>
-    <button {{action "cancel"}} class="btn big btn-add">Cancel</button>
+    <button {{action "cancel"}} class="btn big btn-delete">Cancel</button>
   {{/if}}
 {{!-- 
 

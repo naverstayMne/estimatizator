@@ -8,5 +8,10 @@ export default Ember.Route.extend({
         user: _this.store.findRecord('user', query_id),
         id: query_id
     });
+  },
+  actions: {
+  	logout() {
+        this.set('findedUser', null);
+    }
   }
 });

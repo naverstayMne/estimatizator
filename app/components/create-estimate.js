@@ -1,29 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    deadline: {
-        date: null,
-        time: null
-    },
+    // deadline: {
+    //     date: null,
+    //     time: null
+    // },
     newEstimate: {
         title: null,
         created: null,
-        deadline: null,
-        comment: null
+        // deadline: null,
+        // comment: null
     },
     clearEstimate: {
         title: null,
         created: null,
-        deadline: null,
-        comment: null
+        // deadline: null,
+        // comment: null
     },
     store: Ember.inject.service(),
     actions: {
       createEstimate() {
-        var creationDate = new Date(),
-            deadlineTime = this.get('deadline.time'),
-            deadlineDateTime = new Date(Date.parse(new Date(Date.parse(this.get('deadline.date'))).toString().replace("02:00", deadlineTime)));
-        this.set('newEstimate.deadline', deadlineDateTime);
+        var creationDate = new Date();
+        // this.set('newEstimate.deadline', deadlineDateTime);
         this.set('newEstimate.created', creationDate);
 
         var _store = this.get('store'),

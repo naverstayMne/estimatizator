@@ -199,14 +199,30 @@ body{
     letter-spacing: -1px;
     margin: 0}}
 
-.logo{display: block}
+.logo{
+  display: block;
+  margin: 0 auto;
+  width: 187px;
+  height: 44px;
+  background: url(images/main-logo.png) no-repeat 0 0;
+}
 .task-title{
   color: darken($white, 10%);
   background: $dark;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
-  margin-bottom: 60px;
-  padding: 15px 0}
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 15px 0;
+  .container{
+    position: relative;
+    .btn{
+      @extend .v-center;
+      right: 0;
+    }
+  }
+}
 
 .section{
   margin: 0;
@@ -353,9 +369,9 @@ body{
 
 .form-block{
   width: 30%;
-  margin: 15px auto}
+  margin: 30px auto}
 .alert{
-  font-size: 12px;
+  font-size: 16px;
   text-transform: uppercase;
   padding: 15px 0;
   font-weight: 700;

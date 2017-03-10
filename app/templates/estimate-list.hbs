@@ -1,15 +1,21 @@
-<div class="row">
-  <div class="col-7">
-    <h3>Estimate list</h3>
-    {{#if model.user.estimates}}
-      {{estimate-list estimates=model.user.estimates}}
-    {{else}}
-      <div class="alert alert-warning" role="alert">
-        <strong>No estimates found :(</strong>
-      </div>
-    {{/if}}
+<h1 class="task-title">
+  <div class="container">
+    Create new estimate
+    <button {{action "logout"}} class="btn big btn-delete">Logout</button>
   </div>
-  <div class="col-5">
-    {{create-estimate estimate_id=model.id user=model.user}}
-  </div>
-</div>
+</h1>
+{{create-estimate estimate_id=model.id user=model.user}}
+
+<h1 class="task-title">
+  <div class="container">My estimates</div>
+</h1>
+
+{{#if model.user.estimates}}
+  {{estimate-list estimates=model.user.estimates}}
+{{else}}
+  <div class="container text-center">
+    <div class="alert alert-warning">
+      <strong>There are no estimates</strong>
+    </div>
+  </div>  
+{{/if}}
