@@ -9,9 +9,9 @@ export default Ember.Route.extend({
         id: query_id
     });
   },
-  actions: {
-  	logout() {
-        this.set('findedUser', null);
-    }
-  }
+  // actions: {
+  // 	logout() {
+  //       this.set('findedUser', null);
+  //   }
+  // }
 });

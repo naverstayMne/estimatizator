@@ -1,26 +1,32 @@
+{{!-- <div class="container">
+  <div class="row">
+  {{link}}
+    <div class="col">
+      <span>Task Title</span>
+    </div>
+    <div class="col">
+      <span>Created</span>
+    </div>
+  </div>
+  {{#each sortedEstimates as |estimate|}}
+    {{estimate-template estimate=estimate tagName="div" class="row"}}
+  {{/each}}
+</div> --}}
 
-
-<table class="table">
-  <thead class="thead-inverse">
-{{!--     <tr>
-      <th>{{input value=byKeyword class="btn btn-secondary btn-sm" type="text" placeholder="Search"}}</th>
-      <th></th>
-      <th>
-        <button type="button" name="button" {{action "sortDir" "asc"}} class="btn btn-secondary btn-sm">▲</button>
-        <button type="button" name="button" {{action "sortDir" "desc"}} class="btn btn-secondary btn-sm">▼</button>
-      </th>
-      <th></th>
-    </tr> --}}
-    <tr>
-      <th>Estimate</th>
-      <th>Created</th>
-      <th>Deadline</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each sortedEstimates as |estimate|}}
-      {{estimate-template estimate=estimate tagName="tr"}}
-    {{/each}}
-  </tbody>
-</table>
+<div class="container">
+  <div class="items-list estimates">
+    <ul class="items-title">
+      <li class="row">
+        <div class="row-inner">
+          <strong class="col">Task Title</strong>
+          <strong class="col min text-right">Created</strong>
+        </div>
+      </li>
+    </ul>
+    <ul class="items-body">
+      {{#each sortedEstimates as |estimate|}}
+        {{estimate-template estimate=estimate tagName="div" class="row"}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

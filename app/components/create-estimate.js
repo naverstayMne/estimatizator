@@ -1,21 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    // deadline: {
-    //     date: null,
-    //     time: null
-    // },
     newEstimate: {
         title: null,
         created: null,
-        // deadline: null,
-        // comment: null
     },
     clearEstimate: {
         title: null,
         created: null,
-        // deadline: null,
-        // comment: null
     },
     store: Ember.inject.service(),
     actions: {

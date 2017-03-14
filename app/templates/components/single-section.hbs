@@ -1,20 +1,16 @@
 <div class="add-section-wrap">
 	<div class="input-wrap">
-{{!-- 			<select name="" id="">
-			<option value="">Section title</option>
-			<option value="">Research and Planning</option>
-		</select> --}}
-{{!-- 		<select onchange={{action "selectVehicle" value="target.value"}}>
-			{{#each vehicles as |vehicleChoice|}}
-		    <option value={{vehicleChoice}} selected={{vehicle vehicleChoice}}>{{vehicleChoice}}</option>
+
+		<select onchange={{action (mut sectionIndex) value="target.value"}}>
+		  {{#each sections as |sectionChoice index|}}
+		    <option value={{index}} selected={{eq sectionIndex index}}>{{sectionChoice.name}}</option>
 		  {{/each}}
-		</select> --}}
-		{{basic-select}}
+		</select>
+
 	</div>
 	<div class="input-wrap">
 		<div class="input-wrap">
       {{textarea value=newEstimate.comment placeholder="Add description"}}
     </div>
-		{{!-- <textarea name="" id="" placeholder="Add description"></textarea> --}}
 	</div>		
 </div>

@@ -1,4 +1,8 @@
-  <td>{{estimate.title}}</td>
-  <td>{{date-format estimate.created}}</td>
-  <td>{{date-format estimate.deadline}}</td>
-  <td>{{estimate.comment}}</td>
+<div class="row-inner">
+	<div class="col">
+		{{estimate.title}}
+	</div>
+	<div class="col min text-right">
+		{{date-format estimate.created}}
+	</div>
+</div>

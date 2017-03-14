@@ -155,7 +155,11 @@ body{
     &.mostly-clear{border-left-color: lighten($green, 50%)}
     &.not-very-clear{border-left-color: lighten($red, 50%)}}
   &-inner{display: table-row}
-}
+  .estimates &{
+    border-left: 0;
+    background: $white;
+    cursor: pointer;
+    &:hover{background: darken($white, 3%)}}}
 
 .col{
   padding: 10px;

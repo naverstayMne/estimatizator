@@ -1,4 +1,4 @@
-<table class="table">
+{{!-- <table class="table">
   <thead class="thead-inverse">
     <tr>
       <th>{{input value=byKeyword class="btn btn-secondary btn-sm" type="text" placeholder="Search"}}</th>
@@ -31,3 +31,22 @@
     {{/each}}
   </tbody>
 </table>
+ --}}
+
+ <div class="container">
+  <div class="items-list estimates">
+    <ul class="items-title">
+      <li class="row">
+        <div class="row-inner">
+          <strong class="col">Task Title</strong>
+          <strong class="col min text-right">Created</strong>
+        </div>
+      </li>
+    </ul>
+    <ul class="items-body">
+      {{#each sortedEstimates as |estimate|}}
+        {{estimate-template estimate=estimate tagName="div" class="row"}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
