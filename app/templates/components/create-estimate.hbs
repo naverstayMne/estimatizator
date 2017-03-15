@@ -1,6 +1,6 @@
 <div class="form-block">
 	<div class="input-wrap">
-		{{input type="text" placeholder="Task title" value=newEstimate.title}}
+		{{input type="text" placeholder="Task Title" value=newEstimate.title}}
 	</div>
 	{{single-section}}
 	<div class="text-right">
@@ -11,23 +11,8 @@
 	</div>
 
 	{{#if newEstimate.title}}
-    <div class="name">
+    <div style="padding-top: 30px;">
       <p>Name: {{newEstimate.title}}</p>
     </div>
   {{/if}}
-</div>
-
-<div class="container">
-  <div class="form-block"> 
-{{!--     <div class="input-wrap">
-      {{input type="text" value=newEstimate.title placeholder="Task title"}}
-    </div> --}}
-{{!--     <div class="input-wrap">
-      <label for="">Deadline date</label>
-      {{input type="date" value=deadline.date placeholder="Enter your name"}}
-    </div> --}}
-    {{!-- <div class="input-wrap">
-      {{textarea value=newEstimate.comment placeholder="Comment"}}
-    </div> --}}
-  </div>
 </div>

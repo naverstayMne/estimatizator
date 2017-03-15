@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('welcome', {path: '/'});
   this.route('estimate-list', {path: '/user/:query_id'});
   this.route('all-estimates', {path: '/all-estimates'});
-  
+  this.route('single-estimate', {path: '/estimate/:estimate_id'});
 });
 
 export default Router;

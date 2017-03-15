@@ -25,7 +25,9 @@
     </ul>
     <ul class="items-body">
       {{#each sortedEstimates as |estimate|}}
-        {{estimate-template estimate=estimate tagName="div" class="row"}}
+        {{#link-to 'single-estimate' estimate_id}}
+          {{estimate-template estimate=estimate tagName="div" class="row"}}
+        {{/link-to}}        
       {{/each}}
     </ul>
   </div>

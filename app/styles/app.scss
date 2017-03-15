@@ -149,22 +149,23 @@ body{
     position: relative;
     background: darken($white, 3%);
     border-left: 8px solid darken($white, 30%);
-    border-bottom: 1px solid darken($white, 30%);    
+    border-bottom: 1px solid darken($white, 30%);
+    .estimates &{
+      border-left: 0;
+      background: $white;
+      cursor: pointer;
+      &:hover{background: darken($white, 3%)}}
     &.clear{border-left-color: $green}
     &.not-clear{border-left-color: $red}
     &.mostly-clear{border-left-color: lighten($green, 50%)}
     &.not-very-clear{border-left-color: lighten($red, 50%)}}
-  &-inner{display: table-row}
-  .estimates &{
-    border-left: 0;
-    background: $white;
-    cursor: pointer;
-    &:hover{background: darken($white, 3%)}}}
+  &-inner{display: table-row}}
 
 .col{
   padding: 10px;
   display: table-cell;
-  vertical-align: middle}
+  vertical-align: middle;
+  .estimates &{padding: 15px 10px}}
 
 .icon{
   color: inherit;
@@ -258,7 +259,9 @@ body{
     border-top: 1px solid darken($white, 30%)}
   ul li {padding-left: 15px}}
 
-.items-title{border-bottom: 10px solid darken($white, 7%)}
+.items-title{
+  border-bottom: 10px solid darken($white, 7%);
+  .estimates &{border-bottom: 1px solid darken($white, 30%)}}
 
 .min{width: 150px}
 .tool{
@@ -339,6 +342,7 @@ body{
   }
   textarea{
     resize: vertical;
+    height: 60px;
     overflow: auto}}
 
 .edit-tools{
